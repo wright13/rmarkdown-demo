@@ -1,0 +1,67 @@
+---
+title: "R Markdown Demo"
+author: "Sarah Wright"
+date: "2/4/2021"
+output: 
+  html_document:
+    theme: lumen
+params:
+  your_email: "sarah_wright@nps.gov"
+---
+<!--Use include=FALSE to run the code chunk without printing the code or the output (this is a comment and will not show up in the knitted output!)-->
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## I am a second-level header
+### I am a third-level header
+
+Here is some regular text, **and now it is bold.** *Italics are also an option.* It's easy to type a ^superscript^ or a ~subscript~ too. I can write math equations in $\LaTeX$ in two ways: inline (using single \$), or as *displayed formulas* on their own line (using double \$\$):
+
+$$
+A = \pi*r^{2}
+$$
+
+-   this
+-   is
+    -   an
+    -   unordered
+    -   list
+
+1.  here
+1.  is
+    a.  an autonumbered
+    a.  ordered
+    a.  list
+    
+Here is a [link](https://rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf?_ga=2.112017668.1404110233.1612472436-803722910.1605737584) to a helpful cheatsheet.
+
+## Showing your work
+
+This is a chunk of R code with the code and the output visible. You can explain what the code does using readable, formatted text, then run the code right here in the same document.
+```{r cars}
+summary(cars)
+```
+
+## Embedding code output
+
+Sometimes you want to show the output of your code (like a plot or a table) without printing the actual code. Use the parameter `echo=FALSE` to do this.
+```{r pressure, echo=FALSE}
+plot(pressure)
+kableExtra::kable(pressure)
+```
+
+## Evaluating code inline
+
+This report was generated on `r Sys.Date()`. Please direct any and all complaints to `r params$your_email`.
+
+## Things you can create with R Markdown
+
+-  Notebook (for documenting your work as you write code)
+-  Polished html, pdf, or Word reports/articles/etc
+    -  Easy to manage citations!
+-  Static websites
+-  Interactive Shiny documents and dashboards
+-  Static html dashboards
+-  html slide decks
+-  ...and more
